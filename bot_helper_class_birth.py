@@ -199,7 +199,7 @@ def change_phone(*args):
     phone = Phone(args[1])
     new_phone = Phone(args[2])
     contacts = AddressBook.read_file()
-    reck: Record = contacts.get(name)
+    reck: Record = contacts.get(name.value)
     if reck:
         reck.change_phone(phone, new_phone)
     else:
