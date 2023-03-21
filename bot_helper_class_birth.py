@@ -50,7 +50,7 @@ class Birthday(Field):
                 birthday = datetime.strptime(value, "%Y/%m/%d").date()
                 self._value = birthday
             except TypeError or ValueError:
-                raise ValueError('Birthday must be year/month/date')
+                raise ValueError("Birthday must be year/month/date")
         else:
             self._value = ""
 
@@ -85,9 +85,7 @@ class Record:
 
     def days_to_birthday(self):
         delta1 = datetime(
-            datetime.now().year,
-            self.birthday._value.month,
-            self.birthday._value.day
+            datetime.now().year, self.birthday._value.month, self.birthday._value.day
         )
         delta2 = datetime(
             datetime.now().year + 1,
@@ -158,7 +156,7 @@ def help_command():
         'change - change your contact, use "change" "name" "number"',
         'phone - use "phone" "name" that see number this contact',
         "show all - show all your contacts",
-        'birthday name - show birthday'
+        "birthday name - show birthday",
     ]
     return "\n".join(help_list)
 
@@ -267,7 +265,7 @@ commands = {
     bye_command: ["good bye", "bye", ".", "close", "exit"],
     help_command: ["help"],
     del_number: ["del", "delete", "-"],
-    birthday_contact: ["birthday", "bdate", "bd"]
+    birthday_contact: ["birthday", "bdate", "bd"],
 }
 
 
